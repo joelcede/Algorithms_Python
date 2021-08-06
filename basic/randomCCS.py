@@ -1,13 +1,14 @@
 import random
 
-#Decorador
+# Applying static typing, closure and decorator
 def quantityOfCards(func):
-    def creditCars(number):
+    def creditCards(number: int) -> str:
         return func(number)
-    return creditCars
+    return creditCards
 
+# Generate randoms CC(visa or mastercard)
 @quantityOfCards
-def randomCard(range):
+def randomCard(range: int) -> str:
     card = str(random.randint(4,5))
     while (len(card) <= range):
         card += str(random.randint(0,9))
@@ -15,4 +16,4 @@ def randomCard(range):
 
 if __name__ == "__main__":
     card = randomCard(15)
-    print("VISA: "+card if (card[0] == "4") else "MASTERCARD: "+card)
+    print("VISA: " + card if (card[0] == "4") else "MASTERCARD: " + card)
