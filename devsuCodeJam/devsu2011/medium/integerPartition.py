@@ -8,7 +8,7 @@
 
 import math
 
-def partitions(n):
+def partitions(n: int) -> int:
     if n <= 0 or n > 255: return -1
     return int((math.exp(math.pi * math.sqrt(2*n/3))) / (4*n * round(math.sqrt(3))))
 
